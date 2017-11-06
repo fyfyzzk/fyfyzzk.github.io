@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="廖雪峰
+记录上我不太了解的
+基本语法
+#变量命名
+数字，字母，$   _
+不能以数字开头
+use ‘strict’
+必须var 变量，严格声明
+字符串反引号``
+可以加变量 比如 ${name}
+直接enter多行
+‘1
+2
+3’
+数组Array可以改变数组大小
+undefined
+Array
+indexOf  slice  
+push pop
+shift  unshift
+splice
+conc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/10/05/JS_Note1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="廖雪峰
+记录上我不太了解的
+基本语法
+#变量命名
+数字，字母，$   _
+不能以数字开头
+use ‘strict’
+必须var 变量，严格声明
+字符串反引号``
+可以加变量 比如 ${name}
+直接enter多行
+‘1
+2
+3’
+数组Array可以改变数组大小
+undefined
+Array
+indexOf  slice  
+push pop
+shift  unshift
+splice
+conc">
+<meta property="og:updated_time" content="2017-10-07T05:32:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="廖雪峰
+记录上我不太了解的
+基本语法
+#变量命名
+数字，字母，$   _
+不能以数字开头
+use ‘strict’
+必须var 变量，严格声明
+字符串反引号``
+可以加变量 比如 ${name}
+直接enter多行
+‘1
+2
+3’
+数组Array可以改变数组大小
+undefined
+Array
+indexOf  slice  
+push pop
+shift  unshift
+splice
+conc">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JS_Note1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/05/JS_Note1/" class="article-date">
+  <time datetime="2017-10-05T08:21:30.000Z" itemprop="datePublished">2017-10-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>廖雪峰</p>
+<p>记录上我不太了解的</p>
+<p>基本语法</p>
+<p>#变量命名</p>
+<p>数字，字母，$   _</p>
+<p>不能以数字开头</p>
+<p>use ‘strict’</p>
+<p>必须var 变量，严格声明</p>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>反引号``</p>
+<p>可以加变量 比如 <code>${name}</code></p>
+<p>直接enter多行</p>
+<p>‘1</p>
+<p>2</p>
+<p>3’</p>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>Array可以改变数组大小</p>
+<p>undefined</p>
+<p>Array</p>
+<p>indexOf  slice  </p>
+<p>push pop</p>
+<p>shift  unshift</p>
+<p>splice</p>
+<p>concat</p>
+<p>join!!</p>
+<p>多维数组数量可以不一样</p>
+<p>var arr = [[1,2,3],[400,500,600], ‘-‘];</p>
+<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><p>var xiaoming = {</p>
+<p>​    name: ‘xiaoming’,</p>
+<p>​    birth: 1990,</p>
+<p>​    school: ‘No.1 Middle School’,</p>
+<p>​    weight: 65,</p>
+<p>​    score: null</p>
+<p>​    ‘middle-school’: ‘No.1 Middle School’</p>
+<p>};</p>
+<p>xiaoming.name  === xiaoming[‘name’]</p>
+<p>xiaoming[‘middle-school’]</p>
+<p>to check if a attribute belongs to a Object</p>
+<p>we can use ‘in’</p>
+<p>‘name’ in xiaoming  // true</p>
+<p>‘123’ in xiaoming  // false</p>
+<p>but there’s a problem</p>
+<p>‘toString’ in  xiaoming  // true</p>
+<p>the inheritant attribute is also count</p>
+<p>循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var o = &#123;</div><div class="line">    name: &apos;Jack&apos;,</div><div class="line">    age: 20,</div><div class="line">    city: &apos;Beijing&apos;</div><div class="line">&#125;;</div><div class="line">for (var key in o) &#123;</div><div class="line">    if (o.hasOwnProperty(key)) &#123;</div><div class="line">        alert(key); // &apos;name&apos;, &apos;age&apos;, &apos;city&apos;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>for …. in</p>
+<p>key是索引</p>
+<p>它遍历的实际上是对象的属性名称</p>
+<p>即name, age, city</p>
+<p>如果o是数组</p>
+<p>o[‘Jack’, 20, ‘Beijing’]</p>
+<p>那么 打印key则是 ‘0’, ‘1’, ‘2’</p>
+<p>Array.from()</p>
+<p>Map没有索引   Set有么？</p>
+<p>不能用for in</p>
+<p>for…. of 适用于所有iterable对象</p>
+<p>Array  Map  Set  </p>
+<p>更好的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a.forEach(function (element, index, array) &#123;</div><div class="line">    // element: 指向当前元素的值</div><div class="line">    // index: 指向当前索引</div><div class="line">    // array: 指向Array对象本身</div><div class="line">    alert(element);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h1 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h1><p>arguments</p>
+<p>….rest</p>
+<p>​    rest[i]</p>
+<p>变量提升</p>
+<p>let  区域块</p>
+<p>解决变量提升问题</p>
+<p>const</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/05/JS_Note1/" data-id="cj9nsq9gf00009v5yyt94k949" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/10/05/TIL  05:10:2017/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/28/Scrapy_Note1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/31/微信开发笔记4/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/24/Java HackerRank Note/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/23/注意力训练/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/17/微信开发笔记3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/16/微信开发笔记2/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

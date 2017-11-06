@@ -5,16 +5,34 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Testsssssdfa_sdfdsafdsa_">
+  <meta name="description" content="微信开发笔记2
+命令，启动外网映射
+ngrok http 8080
+lt —port  8080
+知识点：
+Koa的中间件必须是Generator函数
+Only methods that are common to nearly all HTTP servers are integrated directly into Koa’s small ~570 SLOC codebase. This in">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2016/11/14/test/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/10/16/微信开发笔记2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Testsssssdfa_sdfdsafdsa_">
-<meta property="og:updated_time" content="2016-11-15T01:41:45.000Z">
+<meta property="og:description" content="微信开发笔记2
+命令，启动外网映射
+ngrok http 8080
+lt —port  8080
+知识点：
+Koa的中间件必须是Generator函数
+Only methods that are common to nearly all HTTP servers are integrated directly into Koa’s small ~570 SLOC codebase. This in">
+<meta property="og:updated_time" content="2017-10-17T21:21:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Testsssssdfa_sdfdsafdsa_">
+<meta name="twitter:description" content="微信开发笔记2
+命令，启动外网映射
+ngrok http 8080
+lt —port  8080
+知识点：
+Koa的中间件必须是Generator函数
+Only methods that are common to nearly all HTTP servers are integrated directly into Koa’s small ~570 SLOC codebase. This in">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,10 +81,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-微信开发笔记2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/11/14/test/" class="article-date">
-  <time datetime="2016-11-15T01:36:11.000Z" itemprop="datePublished">2016-11-14</time>
+    <a href="/2017/10/16/微信开发笔记2/" class="article-date">
+  <time datetime="2017-10-16T18:46:48.000Z" itemprop="datePublished">2017-10-16</time>
 </a>
     
   </div>
@@ -75,12 +93,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Test<br><del>ssss</del><br><strong>sdfa</strong><br><code>_sdfdsafdsa_</code></p>
+        <p>微信开发笔记2</p>
+<p>命令，启动外网映射</p>
+<p>ngrok http 8080</p>
+<p>lt —port  8080</p>
+<p>知识点：</p>
+<p>Koa的中间件必须是Generator函数</p>
+<p>Only methods that are common to nearly all HTTP servers are integrated directly into Koa’s small ~570 SLOC codebase. This includes things like content negotiation, normalization of node inconsistencies, redirection, and a few others.</p>
+<p>只能使用80端口？？</p>
+<p>Promise</p>
+<p><a href="http://liubin.org/promises-book/#chapter1-what-is-promise" target="_blank" rel="external">http://liubin.org/promises-book/#chapter1-what-is-promise</a></p>
+<p>把异步处理规范化？统一接口?</p>
+<p>new Promise(function (onfullfil, onfail) {</p>
+<p>​    if (xx) {</p>
+<p>​        onfullfil();</p>
+<p>​    } else {</p>
+<p>​        onfail();    </p>
+<p>​    }</p>
+<p>})</p>
+<p>Promise</p>
+<p>.resolve()</p>
+<p>.then()</p>
+<p>Bug</p>
+<p>获取accesstoken后存储时data   出现undefined问题</p>
+<p>必现</p>
+<p>出现条件：已有valide access_token</p>
+<p>问题在于没有return</p>
+<p>Promise.resolve(data)</p>
+<p>需要 return Promise.resolve(data)</p>
+<p>本质上是传递一个promise对象给下一个then()函数调用</p>
+<p>这样传递到下一个then()函数</p>
+<p>问题是：</p>
+<p>留待解决</p>
+<p>why use  that = this？</p>
+<p>为什么不能直接用this?</p>
+<p>回复事件消息这里好奇怪啊，把this的值，status，time，尤其是body替换一下，就自动发回去了</p>
+<p>？？去看Node.js 的流程orKoa的处理流程</p>
+<p>已解决</p>
+<p>bluebird是什么？</p>
+<p>Enhanced Edition Promise</p>
+<p>node –harmony app  </p>
+<p>harmony是啥？</p>
+<p>So <code>--harmony</code> is a shortcut to enable all the harmony features (e.g. <code>--harmony_scoping</code>, <code>--harmony_proxies</code>, etc.) From <a href="http://www.goatslacker.com/post/16000243520/how-to-obtain-harmony-in-your-node-js" target="_blank" rel="external">this blog post</a>, it seems harmony enables new ECMAScript 6 features in the language. The reason your file won’t run without harmony is because <code>app.js</code> is probably using non-backward compatible features from the new ECMAScript 6 standard (like block scoping, proxies, sets, maps, etc.)</p>
+<p>打开可以支持ECMAScript 6新features</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/14/test/" data-id="cj9nsq9gq000a9v5ybedahsq6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/10/16/微信开发笔记2/" data-id="cj9nsq9gq000b9v5y442d4gc0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -89,7 +149,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/12/05/LC325Maximum Size Subarray Sum Equals k/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/17/微信开发笔记3/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -99,9 +159,9 @@
     </a>
   
   
-    <a href="/2016/11/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/10/15/微信笔记1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>

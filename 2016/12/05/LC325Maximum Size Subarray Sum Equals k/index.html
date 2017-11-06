@@ -5,16 +5,25 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Testsssssdfa_sdfdsafdsa_">
+  <meta name="description" content="Maximum Size Subarray Sum Equals k
+
+https://discuss.leetcode.com/topic/33537/java-o-n-explain-how-i-come-up-with-this-idea
+The subarray sum reminds me the range sum problem. Preprocess the input arra">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2016/11/14/test/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/12/05/LC325Maximum Size Subarray Sum Equals k/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Testsssssdfa_sdfdsafdsa_">
-<meta property="og:updated_time" content="2016-11-15T01:41:45.000Z">
+<meta property="og:description" content="Maximum Size Subarray Sum Equals k
+
+https://discuss.leetcode.com/topic/33537/java-o-n-explain-how-i-come-up-with-this-idea
+The subarray sum reminds me the range sum problem. Preprocess the input arra">
+<meta property="og:updated_time" content="2016-12-05T23:03:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Testsssssdfa_sdfdsafdsa_">
+<meta name="twitter:description" content="Maximum Size Subarray Sum Equals k
+
+https://discuss.leetcode.com/topic/33537/java-o-n-explain-how-i-come-up-with-this-idea
+The subarray sum reminds me the range sum problem. Preprocess the input arra">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-LC325Maximum Size Subarray Sum Equals k" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/11/14/test/" class="article-date">
-  <time datetime="2016-11-15T01:36:11.000Z" itemprop="datePublished">2016-11-14</time>
+    <a href="/2016/12/05/LC325Maximum Size Subarray Sum Equals k/" class="article-date">
+  <time datetime="2016-12-05T22:40:11.000Z" itemprop="datePublished">2016-12-05</time>
 </a>
     
   </div>
@@ -75,12 +84,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Test<br><del>ssss</del><br><strong>sdfa</strong><br><code>_sdfdsafdsa_</code></p>
+        <ol>
+<li>Maximum Size Subarray Sum Equals k</li>
+</ol>
+<p><a href="https://discuss.leetcode.com/topic/33537/java-o-n-explain-how-i-come-up-with-this-idea" target="_blank" rel="external">https://discuss.leetcode.com/topic/33537/java-o-n-explain-how-i-come-up-with-this-idea</a></p>
+<p>The subarray sum reminds me the range sum problem. Preprocess the input array such that you get<br>the range sum in constant time.<br>sum[i] means the sum from 0 to i inclusively<br>the sum from i to j is sum[j] - sum[i - 1] except that from 0 to j is sum[j].</p>
+<p>j-i is equal to the length of subarray of original array. we want to find the max(j - i)<br>for any sum[j] we need to find if there is a previous sum[i] such that sum[j] - sum[i] = k<br>Instead of scanning from 0 to j -1 to find such i, we use hashmap to do the job in constant time.<br>However, there might be duplicate value of of sum[i] we should avoid overriding its index as we want the max j - i, so we want to keep i as left as possible.</p>
+<p>这道题要想到用range sum</p>
+<p>建立sum数组，储存每个从0 到当前 index的subarray之和，这样，对于sum数组中的sumj-sumi就等于，从index   i+1开始直到index  j的subarry之和。</p>
+<p>第一步，先建立，sum数组  preprocessing</p>
+<p>第二步，再搜索</p>
+<p>这里的搜索由于要求是O（n）的时间复杂度</p>
+<p>要达到要求，其实和TwoSum的本质是一样的</p>
+<p>每一个index搜索一遍，是O（n），然后用O（1）的get方法来保证达到O（n）的复杂度，所以需要使用hashmap</p>
+<p>这里要注意的是</p>
+<p>hash中的key是sum i</p>
+<p>value保存的是 index</p>
+<p>从而达到  map.containsKey(sum[i] - target)</p>
+<p>的作用。</p>
+<p>这里存在几个问题</p>
+<p>1 对于i = 0时候，和k相等的情况，怎么处理？</p>
+<p>2 对于duplicate的情况如何处理？</p>
+<p>3 对于这段代码，优化到存储和查找放在一起的话，是先存储后查找？还是先查找后存储？</p>
+<p>复制数组</p>
+<p>System.arraycopy( src, 0, dest, 0, src.length );</p>
+<p>int[] a = new int[]{1,2,3,4,5};<br>int[] b = a.clone();</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/14/test/" data-id="cj9nsq9gq000a9v5ybedahsq6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/05/LC325Maximum Size Subarray Sum Equals k/" data-id="cj9nsq9gl00039v5ydhmixlyz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -89,7 +122,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/12/05/LC325Maximum Size Subarray Sum Equals k/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/27/Spring学习笔记（一）/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -99,9 +132,9 @@
     </a>
   
   
-    <a href="/2016/11/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/11/14/test/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>
