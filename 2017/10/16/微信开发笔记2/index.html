@@ -1,99 +1,183 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+
+    <html lang="zh-Hans">
+  
 <head>
   <meta charset="utf-8">
   
   <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="John Doe">
+  
   <meta name="description" content="微信开发笔记2
 命令，启动外网映射
 ngrok http 8080
 lt —port  8080
 知识点：
 Koa的中间件必须是Generator函数
-Only methods that are common to nearly all HTTP servers are integrated directly into Koa’s small ~570 SLOC codebase. This in">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2017/10/16/微信开发笔记2/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="微信开发笔记2
-命令，启动外网映射
-ngrok http 8080
-lt —port  8080
-知识点：
-Koa的中间件必须是Generator函数
-Only methods that are common to nearly all HTTP servers are integrated directly into Koa’s small ~570 SLOC codebase. This in">
-<meta property="og:updated_time" content="2017-10-17T21:21:52.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="微信开发笔记2
-命令，启动外网映射
-ngrok http 8080
-lt —port  8080
-知识点：
-Koa的中间件必须是Generator函数
-Only methods that are common to nearly all HTTP servers are integrated directly into Koa’s small ~570 SLOC codebase. This in">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+Only methods that are common to nearly all HTTP servers are integrated dir">
   
   
-    <link rel="icon" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   
+  <meta property="og:site_name" content="Hexo"/>
+
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+    <meta property="og:image" content="undefined"/>
   
 
+  
+    <meta http-equiv="Content-Language" content="zh-Hans"/>
+  
+
+  <link href="/img/favicon.png" rel="icon">
+  
+    <link rel="apple-touch-icon" href="/img/apple-icon.ico">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-icon.ico">
+    
+
+  <link rel="alternate" href="/dark-tech/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  
+  <!-- Chinese readability improment -->
+  <style type="text/css">
+    article {font-weight: 400;letter-spacing: .01rem;}
+    article .entry{line-height:2;}
+  </style>
+  
+  
+  <style type="text/css">
+  /* Tim Pietrusky advanced checkbox hack (Android <= 4.1.2) */
+body{ -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
+</style>
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48887175-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  
+    <!-- 360 Font and Baidu CDN in China -->
+    
+      <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400|Playball' rel='stylesheet' type='text/css'>
+    
+  <link href='//apps.bdimg.com/libs/fontawesome/4.1.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+  <script src="//libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+  
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
+  <header id="header" class="inner"><div class="padding">
+	<div class="alignleft logo">
+	  <h1><a href="/">Hexo</a></h1>
+	</div>
+	<nav id="main-nav" class="alignright">
+		<input type="checkbox" id="toggle" />
+		<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick><i class="fa fa-bars"></i></label>
+	  <ul class="menu">
+	    
+	      <li><a href="/dark-tech/">Home</a></li>
+	    
+	      <li><a href="/dark-tech/archives">Archives</a></li>
+	    
+	      <li><a href="/about">About</a></li>
+	    
+	      <li><a href="/guestbook">GuestBook</a></li>
+	    
+	    
+	    	<li><a href="/dark-tech/atom.xml" target="_blank" title="bruce tan blog rss" class="rss-top"><i class="fa fa-rss"></i></a></li>
+	    
+	  </ul>
+	</nav>
+	<div class="clearfix"></div>
+</div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-微信开发笔记2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/16/微信开发笔记2/" class="article-date">
-  <time datetime="2017-10-16T18:46:48.000Z" itemprop="datePublished">2017-10-16</time>
-</a>
-    
+  <div id="page-heading-wrap">
+  	<div class="inner">
+      <div class="padding">
+    		
+          <h1></h1>
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-10-16T18:46:48.000Z">2017-10-16</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+            </li>
+          </ul>
+        
+      </div>
+  	</div>
   </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper" class="padding"><article class="post">
+  
+  
+    <div class="post-content">
+  
       
-        <p>微信开发笔记2</p>
+      <div class="entry">
+        
+          <p>微信开发笔记2</p>
 <p>命令，启动外网映射</p>
 <p>ngrok http 8080</p>
 <p>lt —port  8080</p>
@@ -137,122 +221,160 @@ Only methods that are common to nearly all HTTP servers are integrated directly 
 <p>So <code>--harmony</code> is a shortcut to enable all the harmony features (e.g. <code>--harmony_scoping</code>, <code>--harmony_proxies</code>, etc.) From <a href="http://www.goatslacker.com/post/16000243520/how-to-obtain-harmony-in-your-node-js" target="_blank" rel="external">this blog post</a>, it seems harmony enables new ECMAScript 6 features in the language. The reason your file won’t run without harmony is because <code>app.js</code> is probably using non-backward compatible features from the new ECMAScript 6 standard (like block scoping, proxies, sets, maps, etc.)</p>
 <p>打开可以支持ECMAScript 6新features</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/微信开发笔记2/" data-id="cj9nsq9gq000b9v5y442d4gc0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/10/17/微信开发笔记3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
         
       </div>
-    </a>
+      <footer>
+        
+          
+          
+          <div class="share">
   
-  
-    <a href="/2017/10/15/微信笔记1/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
-    </a>
-  
-</nav>
 
+    
+      <div class="bdsharebuttonbox"><a href="#" class="bds_twi" data-cmd="twi" title="Share to Twitter"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="Share to Facebook"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="Share to Wechat"></a><a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="Share to QQ Friends"></a><a href="#" class="bds_linkedin" data-cmd="linkedin" title="Share to linkedin"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a></div>
+	  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","bdysc","tqq","bdxc","kaixin001","tqf","tieba","douban","tsohu","bdhome","sqq","thx","qq","ibaidu","taobao","hi","baidu","sohu","t163","qy","meilishuo","mogujie","diandian","huaban","leho","share189","duitang","hx","tfh","fx","youdao","sdo","qingbiji","ifeng","people","xinhua","ff","mail","kanshou","isohu","yaolan","wealink","xg","ty","iguba","fbook","twi","deli","s51","s139","linkedin","copy","print"],"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{},"image":{"viewList":["twi","fbook","tsina","weixin","mail","copy","sqq","linkedin","youdao","qzone","renren","douban"],"viewText":"Share to","viewSize":"24"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+    
+
+    
+
+    
   
+</div>
+          
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
-    </div>
-  </div>
 
 
-  
+<nav id="pagination" >
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/10/31/微信开发笔记4/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/24/Java HackerRank Note/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/23/注意力训练/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/17/微信开发笔记3/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/16/微信开发笔记2/">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
+    <a href="/2017/10/17/微信开发笔记3/" class="alignleft prev" >Vorherige Seite</a>
+    
+    
+    <a href="/2017/10/15/微信笔记1/" class="alignright next" >Nächste Seite</a>
+    
+    <div class="clearfix"></div>
 </nav>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright"><div class="padding">
+	
+	  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" autocomplete="off" name="q" maxlength="20" results="0" placeholder="Suche">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+	
+	  
+	
+	  
+<div class="widget recent-post">
+  <h3 class="title">Neueste Artikel</h3>
+  <ul class="entry">
     
+      <li>
+        <a href="/2017/10/31/微信开发笔记4/"></a>
+      </li>
+    
+      <li>
+        <a href="/2017/10/24/Java HackerRank Note/"></a>
+      </li>
+    
+      <li>
+        <a href="/2017/10/23/注意力训练/"></a>
+      </li>
+    
+      <li>
+        <a href="/2017/10/17/微信开发笔记3/"></a>
+      </li>
+    
+      <li>
+        <a href="/2017/10/16/微信开发笔记2/"></a>
+      </li>
+    
+  </ul>
+</div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
+	
+	  
+	
+	  <iframe width="100%" height="120" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=10&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5594792135&verifier=676ff25e&dpc=1"></iframe>
+	
+	  <div class="widget category">
+	<h3 class="title">Link</h3>
+	<ul class="entry">
+		
+        	<li><a href="https://www.google.com/">Google</a></li>
+      	
+        	<li><a href="https://github.com/">Github</a></li>
+      	
+        	<li><a href="http://hijiangtao.github.io/">hijiangtao</a></li>
+      	
+	</ul>
+</div>
+	
+</div></aside>
+    <div class="clearfix"></div>
   </div>
+  <footer id="footer" class="inner"><div class="padding">
+	<div class="alignleft">
+	  
+	  Copyright&copy;2013-2017 <a href=" / ">John Doe</a>
+	  
+	  | Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  and Theme by <a href="https://github.com/hijiangtao/dark-tech/" target="_blank">Dark-Tech</a> | <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000257487'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1000257487' type='text/javascript'%3E%3C/script%3E"));</script>
+	</div>
+
+	<div class="alignright">
+		
+		
+			<a href="https://github.com/hijiangtao" target="_blank" title="John Doe Github"><i class="fa fa-github-square"></i></a>	
+		
+		
+		
+			<a href="http://www.weibo.com/hijiangtao" target="_blank" title="John Doe Weibo"><i class="fa fa-weibo"></i></a>	
+		
+		
+		
+		
+			<a href="/dark-tech/atom.xml" target="_blank" title="John Doe RSS"><i class="fa fa-rss-square"></i></a>
+		
+	</div>
+
+	<div class="clearfix"></div>
+</div>
+
+<div class="scroll-top"><i class="fa fa-arrow-circle-up"></i></div>
+</footer>
+  
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+<script type="text/javascript">
+$(window).scroll(function() {
+
+    if($(this).scrollTop() > 400) {
+        $('.scroll-top').fadeIn(200);
+    } else {
+        $('.scroll-top').fadeOut(200);
+    }
+});
+
+$('.scroll-top').bind('click', function(e) {
+    e.preventDefault();
+    $('body,html').animate({scrollTop:0},200);
+});
+</script>
+
 </body>
 </html>

@@ -1,623 +1,972 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+
+    <html lang="zh-Hans">
+  
 <head>
   <meta charset="utf-8">
   
   <title>Hexo</title>
+  <meta name="author" content="John Doe">
+  
+  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <meta property="og:site_name" content="Hexo"/>
+
   
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+    <meta property="og:image" content="undefined"/>
   
 
+  
+    <meta http-equiv="Content-Language" content="zh-Hans"/>
+  
+
+  <link href="/img/favicon.png" rel="icon">
+  
+    <link rel="apple-touch-icon" href="/img/apple-icon.ico">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-icon.ico">
+    
+
+  <link rel="alternate" href="/dark-tech/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  
+  <!-- Chinese readability improment -->
+  <style type="text/css">
+    article {font-weight: 400;letter-spacing: .01rem;}
+    article .entry{line-height:2;}
+  </style>
+  
+  
+  <style type="text/css">
+  /* Tim Pietrusky advanced checkbox hack (Android <= 4.1.2) */
+body{ -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
+</style>
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48887175-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  
+    <!-- 360 Font and Baidu CDN in China -->
+    
+      <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400|Playball' rel='stylesheet' type='text/css'>
+    
+  <link href='//apps.bdimg.com/libs/fontawesome/4.1.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+  <script src="//libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+  
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
+  <header id="header" class="inner"><div class="padding">
+	<div class="alignleft logo">
+	  <h1><a href="/">Hexo</a></h1>
+	</div>
+	<nav id="main-nav" class="alignright">
+		<input type="checkbox" id="toggle" />
+		<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick><i class="fa fa-bars"></i></label>
+	  <ul class="menu">
+	    
+	      <li><a href="/dark-tech/">Home</a></li>
+	    
+	      <li><a href="/dark-tech/archives">Archives</a></li>
+	    
+	      <li><a href="/about">About</a></li>
+	    
+	      <li><a href="/guestbook">GuestBook</a></li>
+	    
+	    
+	    	<li><a href="/dark-tech/atom.xml" target="_blank" title="bruce tan blog rss" class="rss-top"><i class="fa fa-rss"></i></a></li>
+	    
+	  </ul>
+	</nav>
+	<div class="clearfix"></div>
+</div>
 </header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-微信开发笔记4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/31/微信开发笔记4/" class="article-date">
-  <time datetime="2017-10-31T18:28:21.000Z" itemprop="datePublished">2017-10-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>app.js main</p>
-<p>|</p>
-<p>|</p>
-<p>g.js</p>
-<p>|</p>
-<p>|</p>
-<p>weixin.js  reply</p>
-<p>heredoc的作用是？</p>
-<p>ejs的作用是？</p>
-<p>在xml上增加选择，变量功能</p>
-<p>4-04</p>
-<p>wechat uploadMaterial</p>
-<p>request 是什么</p>
-<p>why用request，请求什么？</p>
-<p>request怎么用？</p>
-<p>临时素材的使用场景</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/31/微信开发笔记4/" data-id="cj9nsq9gs000d9v5yzmjathpv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Java HackerRank Note" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/24/Java HackerRank Note/" class="article-date">
-  <time datetime="2017-10-24T22:40:47.000Z" itemprop="datePublished">2017-10-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Java HackerRack Note</p>
-<p>####inside Scanner.nextLine()</p>
-<p>input:</p>
-<p>4.0</p>
-<p>is the best place to learn!</p>
-<p>next()  /  nextDouble() / nextInt()    read unitl next token, double,int happens</p>
-<p>nextLine() read unitl next new line happens /n</p>
-<p>for this example,</p>
-<p>nextDouble() then we call String t = nextLine(),  t is empty</p>
-<p>because, we start readLine from end of ‘4.0’ and that is a new ‘/n’</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/24/Java HackerRank Note/" data-id="cj9nsq9gk00029v5ymbf47u44" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-注意力训练" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/23/注意力训练/" class="article-date">
-  <time datetime="2017-10-23T23:23:25.000Z" itemprop="datePublished">2017-10-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>注意力</p>
-<p>　　这是我很前以前在网上看到的一篇文章，实是找不到它的原始出处了。这种方法能够很快的集中注意力与深度的放松，来使进行全速的学习。缺点就是需要8周左右的时间来练习。         注：自律神经训练法，是我见过的激发身心潜能，推进个人成长最有效的工具之一。它与ＮＬＰ（神经语言程序学）、ＮＡＣ（神经链调整术）、速读、思维导图、突破性思维是我见过的最强悍有力的工具，它与个人渴望成长的欲望及无坚不摧的毅力结合起来，能使个人如天蚕般不断地蜕变成长。 　　自律神经训练法—-听起来好象是自我约束的最高境界，也许的确如此。这就是为什么德国医学博士舒尔茨选择“自律神经训练法”这个词来描述他自己炮制的独特新处方的原因。一旦我们掌握了这个简单练习，当压力出现的时候，就能够很快放松，让整个身心回归和谐。 　　对于生活节奏很快或学习任务繁重的人来说，“自律神经训练法”再理想不过了。它就像心理健美式的心灵体操，对各个领域的人都很有帮助。你一天只需做7到10分钟这样的练习，迟早能达到预期效果。选择一个你不容易被打扰的地方进行练习，你可以在几秒钟之内就达到“超级”有力的状态。 　　你将从“自律神经训练法”中学到自主控制身体状态的自律神经训练法则。这些其实原本是为培养苏联航天员而专门设计的。著名的神经学家德拉指出：“即使经过几年的冥想和一年的瑜伽功练习，我也没能像练‘自律神经训练法’那样彻底放松。这是一个优雅的、可信的、灵活的系统。因此我很愿意把它推荐给超级学习者。如果你想获得优秀或者只想感觉好一点，都不妨试一试。” 　　虽然要用8周的时间学习自律神经训练法，但如果你掌握了它，就能在短时间内进入脑体平衡状态。好吧。让我们现在就开始。 　　</p>
-<p>１。准备活动 　　采取一种你认为舒适的姿势： 　　半躺——在一个舒服的椅子或躺椅上放松，脑袋靠在椅背上，将胳膊和双手放在扶手或大腿上，腿和脚不能交叉，双脚略微向外转，舒服地放置。双眼紧闭。 　　躺下——仰面躺在沙发上、床上或软垫上，头下枕一个枕头。双肘略弯，把胳膊放在身体两侧，掌心向下。双腿分开，放松，双脚略向侧方向而非笔直向上。闭眼。 　　端坐——正坐在椅子或凳子上，头部略向前×，胳膊和双手自然散放在大腿上。双腿怎么舒服怎么放，双脚略向外。闭眼。 　　</p>
-<p>２。热身运动 　　放松脸部所有的肌肉，自然放松。合上眼睑静静休息，眼观鼻尖，下巴松悬，嘴巴微张，上下牙齿不要接触。将舌头放在上牙的牙龈线上，就像在不出声发|d|或|t|音。 　　开始平稳地用腹部吸气，不牵动其它任何部位。当空气流入时，感觉你的腹部因充满空气鼓起来。当人呼气时，感觉腹部陷下去变成空的。慢慢地吸气，呼出两倍于所吸的气。每次吸气时都往上加数，吸气，２、３；呼气，２、３、４、５、６；吸气，２、３、４；呼气，２、３、４、５、６、７、８。在１或２的时候开始吸气，然后增至６或７，不要抻着。 　　然后转回开始处。吸入６，呼出１２；吸入５，呼出１０；吸入４，呼出８……一直回到１。 　　如此坚持２到３分钟。 　　</p>
-<p>３。第一阶段自律神经训练法训练 　　</p>
-<p>第一步——深重感 　　从寻找体内的一咱愉悦的沉重感开始，从右臂起，对自己说： 　　</p>
-<p>我的右臂越来越无力而沉重。　　　　（６～８次） 　　</p>
-<p>我的右臂越来越沉重，越来越觉重。　（６～８次） 　　</p>
-<p>我的右臂已经完全沉重了。　　　　　（６～８次） 　　</p>
-<p>我感到无比平静。　　　　　　　　　（１次） 　　</p>
-<p>睁开眼睛，摆脱右臂的沉重感，将胳膊前后弯曲几次。做几个深呼吸，再放松。</p>
-<p>再进行一次热身运动，做一个循环。 　　</p>
-<p>第一步沉重感练习１次约持续约７～１０分钟，一天２～３次。 　　</p>
-<p>如果想象胳膊发沉有困难，可以在右臂上加一个重物，大声说：“我的右臂越来越沉了！” 　　</p>
-<p>做３天右臂沉重练习。 　　然后按同样的程序做右臂练习，双臂练习，右腿练习，左腿练习，双腿练习，四肢练习，四肢练习，每次３天。 　　</p>
-<p>“第一步——沉重感”练习大约需要持续３周时间。如果你能体验到四肢产生一种真正的沉重感，说明你已经为第二步做好了准备；如果还没有，再多做些时间，直到达到理想的状态为止。有些人１天就能做完全部练习，但这种根基是不牢的，最好先打下一个坚实的基础。</p>
-<p>第二步——温暖感 　　一旦你感到沉重感，就可以随意产生温暖感： 　　</p>
-<p>我的右臂越来越无力而温暖。　　　　（６～８次） 　　</p>
-<p>我的右臂越来越温暖，越来越温暖。　（６～８次） 　　</p>
-<p>我的右臂已经完全温暖了。　　　　　（６～８次） 　　</p>
-<p>我感到无比温暖。　　　　　　　　　（１次） 　　</p>
-<p>当你重复这一温暖程序时，努力想象将右臂放入一桶温水中，或者一只手臂正在热乎乎的太阳照耀下。 　　按照第一步的程序，右臂练三天，左臂练三天，双臂，左腿，右腿，双腿，四肢每个都练３天，你会在３周内掌握它。然后合并前二步的内容，练习做最后程序式： 　　</p>
-<p>我的四肢越来越无力，沉重而温暖。　（６～８次） 　　</p>
-<p>我的四肢越来越沉重而温暖。　　　　（６～８次） 　　</p>
-<p>我的四肢已经沉重而温暖。　　　　　（６～８次） 　　</p>
-<p>我感到无比平静。　　　　　　　　　（１次） 　　</p>
-<p>如果你意念温暖有问题，可以在四肢上弄些温水，对自己说：“我的胳膊好温暖！”注意：做温暖程序前要等到有沉重感才能去做。 　　在做第二步的循环中间应该睁开眼睛，动动四肢，扔掉沉重感和温暖感，然后再激发它。 　　第三步——静心 　　最好仰面躺下做此练习。感觉你的心跳，感觉它在你的胸口、喉咙或任何一处。你可以把右手放在左腕脉膊处或放在胸口，在通常的放松状态下，你就能感觉到心跳，然后不出声地对自己重复： 　　我胸膛感到温暖和愉悦。　　　　　　（６～８次） 　　我的心跳平静而稳定。　　　　　　　（６～８次） 　　我感到无比平静。　　　　　　　　　（６～８次） 　　坚持练习２周的时间，每天２～３次，总共７～１０分钟。如果你在练习后仍做得不好，继续做下一个。 　　第四步——控制呼吸 　　做热身，重复以下训练： 　　我的四肢越来越无力而又沉重又温暖。 （１～２次） 　　我的四肢越来越沉重而温暖。 （１～２次） 　　我的四肢已经完全沉重而温暖。 （１～２次） 　　我的心跳平静而稳定。 （１～２次） 　　我感到无比平静。 （１～２次） 　　我的呼吸无比平静。 （１～２次） 　　每天练习７～１０分钟，分为２～３次，坚持做２周。当你爬楼梯或慢跑时仍然能够随意平静而有节奏地呼吸，恭喜你，你已经成功地掌握它了。到那时你可以把最后一句话换一换—— 　　“我的呼吸它呼吸了我。” 　　第五步——暖胃 　　这是为了让你的“心窝”——腰的上部、肋骨下部——产生令你怜悯的温暖感。 　　先做热身练习，然后简短地重复一下沉重、温暖感程序及静心各呼吸练习，最后加上： 　　我的胃正在变软变温暖。 （６～８次） 　　我感到无比平静。 （１次） 　　为帮助你在“心窝”里产生温暖感，你可以将右掌放在心窝处做练习。慢慢地，你会感觉到心窝在散发着热量。坚持一日２～３次，每次７～１０分钟，做两周。当你能随意感到温暖的时候就算完成了。 　　第六步。——冷却前额 　　第一练习能让你学会体验前额的凉爽。做完前面的步骤后，对自己默念： 　　我的前额很凉爽很舒服。 （１～２次） 　　我感到无比平静。 （１次） 　　想象一股清新的微风吹拂你的前额和脸庞。如果你没有立即感觉到凉爽，那就站在空调或电扇前大声对自己说：“我的前额好凉爽！”此练习一天做２～３次，７～１０分钟，做两周。当你明显体验到前额凉爽时，你就已经完成了第六步。 　　第七步——总结 　　准备好练习最后总结程序，你马上就可以从自律神经训练法第一阶段毕业了。做热身练习、简短重复沉重感、温暖感、静心、呼吸、暖胃及前额练习，最后说： 　　我的心跳沉重而温暖。 　　我的心跳和呼吸平静而稳定。 　　我的胃柔软而温暖，我的前额很凉爽。 　　我感到无比平静。 　　将这样的总结重复几次。如果你掌握了整套方法，就可以只默念１到２次即达到一种愉悦的、平静的、无压力的“自律神经训练法状态”，控制权在你手中。进入这种状态的能力会随着不断地练习而加强。巩固性练习是两天一次，每次５分钟。 　　无论何时，不管是面临竞争也好，考试也好，演讲也好，挑战也好，如果你想要唤起这种特殊状态，你只需简单地对自己说：“四肢沉重，温暖；心脏和呼吸平静、沉稳；胃部温暖，前额发凉，身心平静。”你就不会受任何压力影响。 　　４．第二阶段自律神经训练法训练 　　“超级学习法”自律神经训练法训练的第二阶段涉及６个意念和想象式训练，但关键之处只有一个——如何用气。第二阶段的训练是从更深层次开发你的能力与力量，帮助你达到强大的合一气功态。让我们从沉入地球引力开始。 　　第一步——感觉重心 　　坐在椅子上或盘腿坐在床上，背部挺直，面向前方，鼻脐一线，意守丹田（脐下一寸处）。想象一下你正在骑自行车，要停下来仍要保持平衡。感受一下为了平衡你必须与其保持一致的那个中心点。然后让知觉再回到你坐着的状态，集中意念在脐下一寸处一会儿。如果需要，可以把一根手指放在丹田处，以集中注意力。 　　现在，体会你处于宇宙中心的位置，每次一半地减少宇宙的圈层，一半，一半，一半，将其带入你的中心点。持续注意它，每次减少一半，无限做下去，让你的知觉落入这一点。持续保持天人合一感和宇宙中心感一段时间，不管你在哪里，你的重心始终是宇宙无限圈层的中心。 　　第二步——完全放松 　　用你喜爱的方式完全放松，或做如下练习： 　　坐下，双臂自然垂于体侧，尽可能地晃动双手，以使整个身体晃动。 　　做此动作时仍须意守丹田，然后停下，保持安静。与重心融在一起的放松会把你带入一种力量式放松中。 　　第三步——引力再生 　　使你的身体每一部位的重量都落在椅子或床上，让地球引力来放松你的身体。感觉你的双肩、双臂、双腿、背部及臀部的重量全都由椅子或床在很舒服地支撑着，完全支撑着，而你不用支撑体重了。丢下你的重量，你感到轻了，生根了，完全放松和平静了。 　　第四步——双手充气 　　让生命之能在全身流动并从手部扩展，然后顺臂而下，由手及指尖流向无限的空间。让新气能人宇宙灌入，给你的身心重新充电，平衡并提供能量。如果你的身体有地方感到酸痛或不舒服，将“充气”的双手放在上面。将此状态保持一会儿，再做几个深呼吸，转转身体，你会感到能量充沛、精神焕发。 　　第二阶段的再生训练会将你的精神、宇宙、动能和气能合而为一。一旦你能迅速而轻松进入这种合一的状态，就可以在任何地方进行这种练习。当你能够在神意和谐的基础上运动时，就能够调动更多的能量来应付各种局面，不管是面临面试、考试、商业谈判还是其它挑战，你都能应付自如。 　　自律神经训练法训练的法门 　　一字一句地重复各个步骤的程序，同时要全心全意地想象、意会和感觉。沉重感和温暖感也许会使你感到疲倦，如果你很容易入睡，就尝试一下坐姿练习。 　　不要跳过任何一段，逐步递进，睁开双眼四处转一转，伸伸腰，弯曲肌肉，体验释放各种压力有关的毛病的感觉。 　　一点补充技巧： 　　○如要加速成效 　　除了勤加练习外，可加上设锚（Anchoring）的方式，以加速累积的进步与成果。 即每次练习完，皆以左手前三指，捏在一起以储存刚才的练习成果。并为下次练习激活之用。此为 &lt;三指法&gt;。 　　○成功时的现象与利益 　　只要两眼一闭，三指一掐，身心就进入极度放松的状态。只要很短五~十分钟，就可有很深的休息效果，身心的压力与疲惫一扫而空。甚至，创意与灵感油然而生。所以有很多超能力的修行者，皆以此状态为修行的必要过程。 　　——结束——</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/23/注意力训练/" data-id="cj9nsq9gt000f9v5y9ye1afmt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-微信开发笔记3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/17/微信开发笔记3/" class="article-date">
-  <time datetime="2017-10-17T21:22:08.000Z" itemprop="datePublished">2017-10-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>微信开发笔记3</p>
-<p>Promise的讲解</p>
-<p>resolve()  then()</p>
-<p>imooc有资料</p>
-<p>Generator</p>
-<p>今天的目标 2：50 - 23：00</p>
-<p>Ch4 Ch5</p>
-<p>Ch6 Ch7</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/17/微信开发笔记3/" data-id="cj9nsq9gr000c9v5y8t7ydb0x" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-微信开发笔记2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/16/微信开发笔记2/" class="article-date">
-  <time datetime="2017-10-16T18:46:48.000Z" itemprop="datePublished">2017-10-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>微信开发笔记2</p>
-<p>命令，启动外网映射</p>
-<p>ngrok http 8080</p>
-<p>lt —port  8080</p>
-<p>知识点：</p>
-<p>Koa的中间件必须是Generator函数</p>
-<p>Only methods that are common to nearly all HTTP servers are integrated directly into Koa’s small ~570 SLOC codebase. This includes things like content negotiation, normalization of node inconsistencies, redirection, and a few others.</p>
-<p>只能使用80端口？？</p>
-<p>Promise</p>
-<p><a href="http://liubin.org/promises-book/#chapter1-what-is-promise" target="_blank" rel="external">http://liubin.org/promises-book/#chapter1-what-is-promise</a></p>
-<p>把异步处理规范化？统一接口?</p>
-<p>new Promise(function (onfullfil, onfail) {</p>
-<p>​    if (xx) {</p>
-<p>​        onfullfil();</p>
-<p>​    } else {</p>
-<p>​        onfail();    </p>
-<p>​    }</p>
-<p>})</p>
-<p>Promise</p>
-<p>.resolve()</p>
-<p>.then()</p>
-<p>Bug</p>
-<p>获取accesstoken后存储时data   出现undefined问题</p>
-<p>必现</p>
-<p>出现条件：已有valide access_token</p>
-<p>问题在于没有return</p>
-<p>Promise.resolve(data)</p>
-<p>需要 return Promise.resolve(data)</p>
-<p>本质上是传递一个promise对象给下一个then()函数调用</p>
-<p>这样传递到下一个then()函数</p>
-<p>问题是：</p>
-<p>留待解决</p>
-<p>why use  that = this？</p>
-<p>为什么不能直接用this?</p>
-<p>回复事件消息这里好奇怪啊，把this的值，status，time，尤其是body替换一下，就自动发回去了</p>
-<p>？？去看Node.js 的流程orKoa的处理流程</p>
-<p>已解决</p>
-<p>bluebird是什么？</p>
-<p>Enhanced Edition Promise</p>
-<p>node –harmony app  </p>
-<p>harmony是啥？</p>
-<p>So <code>--harmony</code> is a shortcut to enable all the harmony features (e.g. <code>--harmony_scoping</code>, <code>--harmony_proxies</code>, etc.) From <a href="http://www.goatslacker.com/post/16000243520/how-to-obtain-harmony-in-your-node-js" target="_blank" rel="external">this blog post</a>, it seems harmony enables new ECMAScript 6 features in the language. The reason your file won’t run without harmony is because <code>app.js</code> is probably using non-backward compatible features from the new ECMAScript 6 standard (like block scoping, proxies, sets, maps, etc.)</p>
-<p>打开可以支持ECMAScript 6新features</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/微信开发笔记2/" data-id="cj9nsq9gq000b9v5y442d4gc0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-微信笔记1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/15/微信笔记1/" class="article-date">
-  <time datetime="2017-10-16T01:36:56.000Z" itemprop="datePublished">2017-10-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>微信开发笔记1</p>
-<p>入门—流程概览</p>
-<p>微信小程序可以和微信号绑定，共用一个UnionID</p>
-<p>获取token每天有次数限制</p>
-<p>1 群发也是一个功能哟，broadcast</p>
-<p>2 被动回复，5秒内回复。可加密（??）其他3种消息的调用因为是API调用而不是对请求的返回，所以不需要加解密）。</p>
-<p>3 客服消息，用户先发，48小时内，客服无限发。</p>
-<p>4 模板消息，服务通知，刷卡，服务预约成功通知，（关注成功也算吧？）</p>
-<p>网页形式提供服务，用到</p>
-<p>1 网页授权获取用户基本信息，</p>
-<p>2 JS-SDK</p>
-<p>接入验证</p>
-<p>[token, timestamp, nonce] .hash() == signature</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/15/微信笔记1/" data-id="cj9nsq9gs000e9v5y0df8kowh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-TIL  05:10:2017" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/05/TIL  05:10:2017/" class="article-date">
-  <time datetime="2017-10-05T22:04:19.000Z" itemprop="datePublished">2017-10-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="TIL-05-10-2017"><a href="#TIL-05-10-2017" class="headerlink" title="TIL  05/10/2017"></a>TIL  05/10/2017</h1><p>正则表达式的</p>
-<p>|</p>
-<p>这个or 不一一样</p>
-<p>a|B</p>
-<p>满足第一个条件或满足第二个条件就满足</p>
-<p>对吧</p>
-<p>但实际上</p>
-<p>如果两者都存在</p>
-<p>就一起去掉</p>
-<p>比如 </p>
-<p>a8888B</p>
-<p>8888</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/05/TIL  05:10:2017/" data-id="cj9nsq9gp00099v5yom2ob5dx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS_Note1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/05/JS_Note1/" class="article-date">
-  <time datetime="2017-10-05T08:21:30.000Z" itemprop="datePublished">2017-10-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>廖雪峰</p>
-<p>记录上我不太了解的</p>
-<p>基本语法</p>
-<p>#变量命名</p>
-<p>数字，字母，$   _</p>
-<p>不能以数字开头</p>
-<p>use ‘strict’</p>
-<p>必须var 变量，严格声明</p>
-<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>反引号``</p>
-<p>可以加变量 比如 <code>${name}</code></p>
-<p>直接enter多行</p>
-<p>‘1</p>
-<p>2</p>
-<p>3’</p>
-<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>Array可以改变数组大小</p>
-<p>undefined</p>
-<p>Array</p>
-<p>indexOf  slice  </p>
-<p>push pop</p>
-<p>shift  unshift</p>
-<p>splice</p>
-<p>concat</p>
-<p>join!!</p>
-<p>多维数组数量可以不一样</p>
-<p>var arr = [[1,2,3],[400,500,600], ‘-‘];</p>
-<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><p>var xiaoming = {</p>
-<p>​    name: ‘xiaoming’,</p>
-<p>​    birth: 1990,</p>
-<p>​    school: ‘No.1 Middle School’,</p>
-<p>​    weight: 65,</p>
-<p>​    score: null</p>
-<p>​    ‘middle-school’: ‘No.1 Middle School’</p>
-<p>};</p>
-<p>xiaoming.name  === xiaoming[‘name’]</p>
-<p>xiaoming[‘middle-school’]</p>
-<p>to check if a attribute belongs to a Object</p>
-<p>we can use ‘in’</p>
-<p>‘name’ in xiaoming  // true</p>
-<p>‘123’ in xiaoming  // false</p>
-<p>but there’s a problem</p>
-<p>‘toString’ in  xiaoming  // true</p>
-<p>the inheritant attribute is also count</p>
-<p>循环</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var o = &#123;</div><div class="line">    name: &apos;Jack&apos;,</div><div class="line">    age: 20,</div><div class="line">    city: &apos;Beijing&apos;</div><div class="line">&#125;;</div><div class="line">for (var key in o) &#123;</div><div class="line">    if (o.hasOwnProperty(key)) &#123;</div><div class="line">        alert(key); // &apos;name&apos;, &apos;age&apos;, &apos;city&apos;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>for …. in</p>
-<p>key是索引</p>
-<p>它遍历的实际上是对象的属性名称</p>
-<p>即name, age, city</p>
-<p>如果o是数组</p>
-<p>o[‘Jack’, 20, ‘Beijing’]</p>
-<p>那么 打印key则是 ‘0’, ‘1’, ‘2’</p>
-<p>Array.from()</p>
-<p>Map没有索引   Set有么？</p>
-<p>不能用for in</p>
-<p>for…. of 适用于所有iterable对象</p>
-<p>Array  Map  Set  </p>
-<p>更好的方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a.forEach(function (element, index, array) &#123;</div><div class="line">    // element: 指向当前元素的值</div><div class="line">    // index: 指向当前索引</div><div class="line">    // array: 指向Array对象本身</div><div class="line">    alert(element);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h1 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h1><p>arguments</p>
-<p>….rest</p>
-<p>​    rest[i]</p>
-<p>变量提升</p>
-<p>let  区域块</p>
-<p>解决变量提升问题</p>
-<p>const</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/05/JS_Note1/" data-id="cj9nsq9gf00009v5yyt94k949" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Scrapy_Note1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/28/Scrapy_Note1/" class="article-date">
-  <time datetime="2017-09-28T15:42:53.000Z" itemprop="datePublished">2017-09-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>正则表达式</p>
-<p>^b</p>
-<p>以b开头</p>
-<p>.</p>
-<p>represents any char no matter english or chinese char</p>
-<p>*: the previous char can appear any times, 0 times - N times</p>
-<p>bobby123</p>
-<p>^b.*</p>
-<p>Match!</p>
-<p>b</p>
-<p>^b.*</p>
-<p>??  Match</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/28/Scrapy_Note1/" data-id="cj9nsq9gn00069v5yyjxqgufq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Roguelike" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/26/Roguelike/" class="article-date">
-  <time datetime="2017-09-26T20:37:09.000Z" itemprop="datePublished">2017-09-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Roguelike"><a href="#Roguelike" class="headerlink" title="#Roguelike"></a>#Roguelike</h1><p>private Transform boardHolder;</p>
-<p>for boardHolder How to effect?</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/26/Roguelike/" data-id="cj9nsq9gm00049v5y1d0ck3e3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
-  </nav>
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/10/31/微信开发笔记4/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/24/Java HackerRank Note/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/23/注意力训练/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/17/微信开发笔记3/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/16/微信开发笔记2/">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
+  <div id="page-heading-wrap">
+  	<div class="inner">
+      <div class="padding">
+    		
+          <h2></h2>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
+  	</div>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper" class="padding">
+  <article class="post">
   
-    <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <div class="post-content-index">
   
-</nav>
+      
+        <header>
+          <div class="icon"></div>
+            
     
+      <h1 class="title transition"><a href="/2017/10/31/微信开发笔记4/"></a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-10-31T18:28:21.000Z">2017-10-31</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            app.js main
+|
+|
+g.js
+|
+|
+weixin.js  reply
+heredoc的作用是？
+ejs的作用是？
+在xml上增加选择，变量功能
+4-04
+wechat uploadMaterial
+request 是什么
+why用request，请求什么？
+request怎么用？
+临时素材的使用场景
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2017/10/31/微信开发笔记4/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2017/10/24/Java HackerRank Note/"></a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-10-24T22:40:47.000Z">2017-10-24</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
 
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            Java HackerRack Note
+####inside Scanner.nextLine()
+input:
+4.0
+is the best place to learn!
+next()  /  nextDouble() / nextInt()    read unitl next token, double,int happens
+nextLine() read unitl next new line happens /n
+for this example,
+nextDouble() then we call String t = nextLine(),  t is empty
+because, we start readLine from end of ‘4.0’ and that is a new ‘/n’
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2017/10/24/Java HackerRank Note/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2017/10/23/注意力训练/"></a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-10-23T23:23:25.000Z">2017-10-23</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            注意力
+　　这是我很前以前在网上看到的一篇文章，实是找不到它的原始出处了。这种方法能够很快的集中注意力与深度的放松，来使进行全速的学习。缺点就是需要8周左右的时间来练习。         注：自律神经训练法，是我见过的激发身心潜能，推进个人成长最有效的工具之一。它与ＮＬＰ（神经语言程序学）、ＮＡＣ（神经链调整术）、速读、思维导图、突破性思维是我见过的最强悍有力的工具，它与个人渴望成长的欲望及无坚不摧的毅力结合起来，能使个人如天蚕般不断地蜕变成长。 　　自律神经训练法—-听起来好象是自我约束的最高境界，也许的确如此。这就是为什么德国医学博士舒尔茨选择“自律神经训练法”这个词来描述他自己炮制的独特新处方的原因。一旦我们掌握了这个简单练习，当压力出现的时候，就能够很快放松，让整个身心回归和谐。 　　对于生活节奏很快或学习任务繁重的人来说，“自律神经训练法”再理想不过了。它就像心理健美式的心灵体操，对各个领域的人都很有帮助。你一天只需做7到10分钟这样的练习，迟早能达到预期效果。选择一个你不容易被打扰的地方进行练习，你可以在几秒钟之内就达到“超级”有力的状态。 　　你将从“自律神经训练法”中学到自主控制身体状态的自律神经训练法则。这些其实原本是为培养苏联航天员而专门设计的。著名的神经学家德拉指出：“即使经过几年的冥想和一年的瑜伽功练习，我也没能像练‘自律神经训练法’那样彻底放松。这是一个优雅的、可信的、灵活的系统。因此我很愿意把它推荐给超级学习者。如果你想获得优秀或者只想感觉好一点，都不妨试一试。” 　　虽然要用8周的时间学习自律神经训练法，但如果你掌握了它，就能在短时间内进入脑体平衡状态。好吧。让我们现在就开始。 　　
+１。准备活动 　　采取一种你认为舒适的姿势： 　　半躺——在一个舒服的椅子或躺椅上放松，脑袋靠在椅背上，将胳膊和双手放在扶手或大腿上，腿和脚不能交叉，双脚略微向外
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2017/10/23/注意力训练/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2017/10/17/微信开发笔记3/"></a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-10-17T21:22:08.000Z">2017-10-17</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            微信开发笔记3
+Promise的讲解
+resolve()  then()
+imooc有资料
+Generator
+今天的目标 2：50 - 23：00
+Ch4 Ch5
+Ch6 Ch7
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2017/10/17/微信开发笔记3/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2017/10/16/微信开发笔记2/"></a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-10-16T18:46:48.000Z">2017-10-16</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            微信开发笔记2
+命令，启动外网映射
+ngrok http 8080
+lt —port  8080
+知识点：
+Koa的中间件必须是Generator函数
+Only methods that are common to nearly all HTTP servers are integrated directly into Koa’s small ~570 SLOC codebase. This includes things like content negotiation, normalization of node inconsistencies, redirection, and a few others.
+只能使用80端口？？
+Promise
+http://liubin.org/promises-book/#chapter1-what-is-promise
+把异步处理规范化？统一接口?
+new Promise(function (onfullfil, onfail) {
+​    if (xx) {
+​        onfullfil();
+​    } else {
+​        onfail();    
+​    }
+})
+Promise
+.resolve()
+.then()
+Bug
+获取accesstoken后存储时data   出现undefined问题
+必现
+出现条件：已有valide access_token
+问题在于没有return
+Promise.resolve(data)
+需要 return Promise.resolve(data)
+本质上是传递一个promise对象给下一个then()函数调用
+这样传递到下一个then()函数
+问题是：
+留待解决
+why use  that = this？
+为什么不能直接用this?
+回复事件消息这里好奇
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2017/10/16/微信开发笔记2/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2017/10/15/微信笔记1/"></a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-10-16T01:36:56.000Z">2017-10-15</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            微信开发笔记1
+入门—流程概览
+微信小程序可以和微信号绑定，共用一个UnionID
+获取token每天有次数限制
+1 群发也是一个功能哟，broadcast
+2 被动回复，5秒内回复。可加密（??）其他3种消息的调用因为是API调用而不是对请求的返回，所以不需要加解密）。
+3 客服消息，用户先发，48小时内，客服无限发。
+4 模板消息，服务通知，刷卡，服务预约成功通知，（关注成功也算吧？）
+网页形式提供服务，用到
+1 网页授权获取用户基本信息，
+2 JS-SDK
+接入验证
+[token, timestamp, nonce] .hash() == signature
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2017/10/15/微信笔记1/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2017/10/05/TIL  05:10:2017/"></a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-10-05T22:04:19.000Z">2017-10-05</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            TIL  05/10/2017正则表达式的
+|
+这个or 不一一样
+a|B
+满足第一个条件或满足第二个条件就满足
+对吧
+但实际上
+如果两者都存在
+就一起去掉
+比如 
+a8888B
+8888
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2017/10/05/TIL  05:10:2017/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2017/10/05/JS_Note1/"></a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-10-05T08:21:30.000Z">2017-10-05</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            廖雪峰
+记录上我不太了解的
+基本语法
+#变量命名
+数字，字母，$   _
+不能以数字开头
+use ‘strict’
+必须var 变量，严格声明
+字符串反引号``
+可以加变量 比如 ${name}
+直接enter多行
+‘1
+2
+3’
+数组Array可以改变数组大小
+undefined
+Array
+indexOf  slice  
+push pop
+shift  unshift
+splice
+concat
+join!!
+多维数组数量可以不一样
+var arr = [[1,2,3],[400,500,600], ‘-‘];
+Objectvar xiaoming = {
+​    name: ‘xiaoming’,
+​    birth: 1990,
+​    school: ‘No.1 Middle School’,
+​    weight: 65,
+​    score: null
+​    ‘middle-school’: ‘No.1 Middle School’
+};
+xiaoming.name  === xiaoming[‘name’]
+xiaoming[‘middle-school’]
+to check if a attribute belongs to a Object
+we can use ‘in’
+‘name’ in xiaoming  // true
+‘123’ in xiaoming  // false
+but there’s a problem
+‘toString’ in  xiaoming  // true
+the inheritant attribute is also count
+循环
+12345678910var o = &amp;#123;    name: &amp;apos;Jack&amp;apos;,    age: 20,    city: &amp;apos;Beij
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2017/10/05/JS_Note1/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2017/09/28/Scrapy_Note1/"></a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-09-28T15:42:53.000Z">2017-09-28</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            正则表达式
+^b
+以b开头
+.
+represents any char no matter english or chinese char
+*: the previous char can appear any times, 0 times - N times
+bobby123
+^b.*
+Match!
+b
+^b.*
+??  Match
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2017/09/28/Scrapy_Note1/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2017/09/26/Roguelike/"></a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-09-26T20:37:09.000Z">2017-09-26</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            #Roguelikeprivate Transform boardHolder;
+for boardHolder How to effect?
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2017/09/26/Roguelike/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+  
+    <a href="/page/2/" class="alignright next">Nächste Seite</a>
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright"><div class="padding">
+	
+	  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" autocomplete="off" name="q" maxlength="20" results="0" placeholder="Suche">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+	
+	  
+	
+	  
+<div class="widget recent-post">
+  <h3 class="title">Neueste Artikel</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2017/10/31/微信开发笔记4/"></a>
+      </li>
+    
+      <li>
+        <a href="/2017/10/24/Java HackerRank Note/"></a>
+      </li>
+    
+      <li>
+        <a href="/2017/10/23/注意力训练/"></a>
+      </li>
+    
+      <li>
+        <a href="/2017/10/17/微信开发笔记3/"></a>
+      </li>
+    
+      <li>
+        <a href="/2017/10/16/微信开发笔记2/"></a>
+      </li>
+    
+  </ul>
+</div>
+
+	
+	  
+	
+	  <iframe width="100%" height="120" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=10&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=5594792135&verifier=676ff25e&dpc=1"></iframe>
+	
+	  <div class="widget category">
+	<h3 class="title">Link</h3>
+	<ul class="entry">
+		
+        	<li><a href="https://www.google.com/">Google</a></li>
+      	
+        	<li><a href="https://github.com/">Github</a></li>
+      	
+        	<li><a href="http://hijiangtao.github.io/">hijiangtao</a></li>
+      	
+	</ul>
+</div>
+	
+</div></aside>
+    <div class="clearfix"></div>
   </div>
+  <footer id="footer" class="inner"><div class="padding">
+	<div class="alignleft">
+	  
+	  Copyright&copy;2013-2017 <a href=" / ">John Doe</a>
+	  
+	  | Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  and Theme by <a href="https://github.com/hijiangtao/dark-tech/" target="_blank">Dark-Tech</a> | <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000257487'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1000257487' type='text/javascript'%3E%3C/script%3E"));</script>
+	</div>
+
+	<div class="alignright">
+		
+		
+			<a href="https://github.com/hijiangtao" target="_blank" title="John Doe Github"><i class="fa fa-github-square"></i></a>	
+		
+		
+		
+			<a href="http://www.weibo.com/hijiangtao" target="_blank" title="John Doe Weibo"><i class="fa fa-weibo"></i></a>	
+		
+		
+		
+		
+			<a href="/dark-tech/atom.xml" target="_blank" title="John Doe RSS"><i class="fa fa-rss-square"></i></a>
+		
+	</div>
+
+	<div class="clearfix"></div>
+</div>
+
+<div class="scroll-top"><i class="fa fa-arrow-circle-up"></i></div>
+</footer>
+  
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+<script type="text/javascript">
+$(window).scroll(function() {
+
+    if($(this).scrollTop() > 400) {
+        $('.scroll-top').fadeIn(200);
+    } else {
+        $('.scroll-top').fadeOut(200);
+    }
+});
+
+$('.scroll-top').bind('click', function(e) {
+    e.preventDefault();
+    $('body,html').animate({scrollTop:0},200);
+});
+</script>
+
 </body>
 </html>
