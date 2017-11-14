@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Page 2 | Hexo</title>
+  <title>Seite 2 | Hexo</title>
   <meta name="author" content="John Doe">
   
   
@@ -141,6 +141,74 @@ body{ -webkit-animation: bugfix infinite 1s; }
   </div>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper" class="padding">
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2017/10/15/微信笔记1/"></a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2017-10-16T01:36:56.000Z">2017-10-15</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/" target="_blank">John Doe</a>
+
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            微信开发笔记1
+入门—流程概览
+微信小程序可以和微信号绑定，共用一个UnionID
+获取token每天有次数限制
+1 群发也是一个功能哟，broadcast
+2 被动回复，5秒内回复。可加密（??）其他3种消息的调用因为是API调用而不是对请求的返回，所以不需要加解密）。
+3 客服消息，用户先发，48小时内，客服无限发。
+4 模板消息，服务通知，刷卡，服务预约成功通知，（关注成功也算吧？）
+网页形式提供服务，用到
+1 网页授权获取用户基本信息，
+2 JS-SDK
+接入验证
+[token, timestamp, nonce] .hash() == signature
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2017/10/15/微信笔记1/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
   <article class="post">
   
   
@@ -765,75 +833,13 @@ j-i is equal to the length of subarray of original array. we want to find the ma
 
 
 
-  <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2016/11/14/hello-world/">Hello World</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2016-11-15T01:17:46.000Z">2016-11-14</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/" target="_blank">John Doe</a>
-
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
-More info: Writing
-Run server1$ hexo server
-More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy to remote sites1$ hexo deploy
-More info: Deployment
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2016/11/14/hello-world/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
-    <a href="/" class="alignleft prev">Prev</a>
+    <a href="/" class="alignleft prev">Vorherige Seite</a>
   
+  
+    <a href="/page/3/" class="alignright next">Nächste Seite</a>
   
   <div class="clearfix"></div>
 </nav></div></div>
@@ -841,7 +847,7 @@ More info: Deployment
 	
 	  <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" autocomplete="off" name="q" maxlength="20" results="0" placeholder="Search">
+    <input type="search" autocomplete="off" name="q" maxlength="20" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -850,8 +856,12 @@ More info: Deployment
 	
 	  
 <div class="widget recent-post">
-  <h3 class="title">Recent Posts</h3>
+  <h3 class="title">Neueste Artikel</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/11/13/Triplebytes面经/">Triplebytes面经</a>
+      </li>
     
       <li>
         <a href="/2017/11/09/从秒杀问题如何设计node-js笔记/">从秒杀问题如何设计node.js笔记</a>
@@ -867,10 +877,6 @@ More info: Deployment
     
       <li>
         <a href="/2017/11/06/11:06:2017/"></a>
-      </li>
-    
-      <li>
-        <a href="/2017/10/31/微信开发笔记4/"></a>
       </li>
     
   </ul>

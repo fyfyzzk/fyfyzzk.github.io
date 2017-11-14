@@ -5,18 +5,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>Triplebytes面经 | Hexo</title>
   <meta name="author" content="John Doe">
   
-  <meta name="description" content="Maximum Size Subarray Sum Equals k
-
-https://discuss.leetcode.com/topic/33537/java-o-n-explain-how-i-come-up-with-this-idea
-The subarray sum reminds me">
+  <meta name="description" content="Tic Tac Toe Board gameboard classai classplayer classai strategy
+###Caching Part
+what is caching?
+do you know any use of caching tech in a web server ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Triplebytes面经"/>
   <meta property="og:site_name" content="Hexo"/>
 
   
@@ -139,11 +139,11 @@ body{ -webkit-animation: bugfix infinite 1s; }
   	<div class="inner">
       <div class="padding">
     		
-          <h1></h1>
+          <h1>Triplebytes面经</h1>
           <ul>
             <li>
               <span class="heading-span">Posted on: </span>
-              <time datetime="2016-12-05T22:40:11.000Z">2016-12-05</time>
+              <time datetime="2017-11-14T03:57:33.000Z">2017-11-13</time>
             </li>
             
               <li>
@@ -174,31 +174,33 @@ body{ -webkit-animation: bugfix infinite 1s; }
       
       <div class="entry">
         
-          <ol>
-<li>Maximum Size Subarray Sum Equals k</li>
-</ol>
-<p><a href="https://discuss.leetcode.com/topic/33537/java-o-n-explain-how-i-come-up-with-this-idea" target="_blank" rel="external">https://discuss.leetcode.com/topic/33537/java-o-n-explain-how-i-come-up-with-this-idea</a></p>
-<p>The subarray sum reminds me the range sum problem. Preprocess the input array such that you get<br>the range sum in constant time.<br>sum[i] means the sum from 0 to i inclusively<br>the sum from i to j is sum[j] - sum[i - 1] except that from 0 to j is sum[j].</p>
-<p>j-i is equal to the length of subarray of original array. we want to find the max(j - i)<br>for any sum[j] we need to find if there is a previous sum[i] such that sum[j] - sum[i] = k<br>Instead of scanning from 0 to j -1 to find such i, we use hashmap to do the job in constant time.<br>However, there might be duplicate value of of sum[i] we should avoid overriding its index as we want the max j - i, so we want to keep i as left as possible.</p>
-<p>这道题要想到用range sum</p>
-<p>建立sum数组，储存每个从0 到当前 index的subarray之和，这样，对于sum数组中的sumj-sumi就等于，从index   i+1开始直到index  j的subarry之和。</p>
-<p>第一步，先建立，sum数组  preprocessing</p>
-<p>第二步，再搜索</p>
-<p>这里的搜索由于要求是O（n）的时间复杂度</p>
-<p>要达到要求，其实和TwoSum的本质是一样的</p>
-<p>每一个index搜索一遍，是O（n），然后用O（1）的get方法来保证达到O（n）的复杂度，所以需要使用hashmap</p>
-<p>这里要注意的是</p>
-<p>hash中的key是sum i</p>
-<p>value保存的是 index</p>
-<p>从而达到  map.containsKey(sum[i] - target)</p>
-<p>的作用。</p>
-<p>这里存在几个问题</p>
-<p>1 对于i = 0时候，和k相等的情况，怎么处理？</p>
-<p>2 对于duplicate的情况如何处理？</p>
-<p>3 对于这段代码，优化到存储和查找放在一起的话，是先存储后查找？还是先查找后存储？</p>
-<p>复制数组</p>
-<p>System.arraycopy( src, 0, dest, 0, src.length );</p>
-<p>int[] a = new int[]{1,2,3,4,5};<br>int[] b = a.clone();</p>
+          <p>Tic Tac Toe Board game<br>board class<br>ai class<br>player class<br>ai strategy</p>
+<p>###Caching Part</p>
+<p>what is caching?</p>
+<p>do you know any use of caching tech in a web server system?</p>
+<p>Do you know how to implement a cache?</p>
+<p>what is the caching tech you used before?</p>
+<p>what is CDN?</p>
+<p>front end caching?</p>
+<p>for the browser, how do you let it not caching some images?<br>    file severs</p>
+<p>do you know Bloom filter?<br>how does it implement?</p>
+<p>###System Design</p>
+<p>Your friend made a crawler by which he got 50,000 cars information.<br>cars color location brand  xx</p>
+<p>how do you design a system to search it.<br>example:<br>user wanna find out first 5000 cars from Seattle</p>
+<p>how do u design the search api? for that example</p>
+<p>How do you deploy it?</p>
+<p>Scale, too many users visit cause it slow,<br>then how do u deploy the server to solve it ?</p>
+<p>###Database<br>index?</p>
+<p>normalization?</p>
+<p>how to find out a slow query?</p>
+<p>###Multi_Thread<br>what is Mutex</p>
+<p>how does it implement?</p>
+<p>what is deadlock?</p>
+<p>what is read-write lock</p>
+<p>what is Condition Synchronization?</p>
+<p>what is Monitor(synchronization)?</p>
+<p>###Data Structure<br>HashMap HashTable<br>what is it?<br>implement?<br>time complexity for search?<br>Always O(1)?<br>bucket size 64, input 64000, conflicts?<br>Rehash process?</p>
+<p>BST?<br>kth smallest in BST<br>TimeComplexity O(log(n))<br>slower or faster situation<br>unbalance, do you know any self-balance data Structure<br>red black tree implement?</p>
 
         
       </div>
@@ -231,10 +233,8 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 <nav id="pagination" >
     
-    <a href="/2017/01/27/Spring学习笔记（一）/" class="alignleft prev" >Vorherige Seite</a>
     
-    
-    <a href="/2016/11/14/test/" class="alignright next" >Nächste Seite</a>
+    <a href="/2017/11/09/从秒杀问题如何设计node-js笔记/" class="alignright next" >Nächste Seite</a>
     
     <div class="clearfix"></div>
 </nav>
